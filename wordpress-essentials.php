@@ -9,15 +9,15 @@
  * that starts the plugin.
  *
  * @link              https://github.com/EmpiricalCodes
- * @since             1.0.0
+ * @since             0.0.1-dev
  * @package           Wordpress_Essentials
  *
  * @wordpress-plugin
  * Plugin Name:       WordPress Essentials
  * Plugin URI:        https://github.com/EmpiricalCodes/wordpress-essentials
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
- * Author:            Emperical Codes
+ * Version:           0.0.1-dev
+ * Author:            Empirical Codes
  * Author URI:        https://github.com/EmpiricalCodes
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -36,6 +36,19 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'WORDPRESS_ESSENTIALS_VERSION', '1.0.0' );
+
+/*
+ * requiring autoload.php file for the proper functioning of the plugin.
+ * */
+if (!file_exists(plugin_dir_path( __FILE__ ) . 'vendor/autoload.php') && is_admin()) {
+    echo '<div class="notice notice-warning">
+             <p> <b>WordPress Essentials</b> plugin will not work because of missing <code>vendor/autoload.php</code> file. 
+             Run <code>composer install</code> to fix this inside <code> ' . plugin_dir_path( __FILE__ ) . '</code> directory.
+             </p></div>';
+} else {
+    require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+}
+
 
 /**
  * The code that runs during plugin activation.
@@ -74,9 +87,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-essentials.php';
  * @since    1.0.0
  */
 function run_wordpress_essentials() {
-
 	$plugin = new Wordpress_Essentials();
 	$plugin->run();
-
 }
 run_wordpress_essentials();

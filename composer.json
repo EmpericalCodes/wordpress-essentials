@@ -1,0 +1,17 @@
+{
+    "name": "empiricalcode/wordpress-essentails",
+    "license": "GPL-2.0-or-later",
+    "description": "This plugin will provide you clean user-interface to toggle common monotonous tasks that you normally do with adding code in your `functions.php`.",
+    "keywords": [
+        "wordpress", "wp", "plugin template"
+    ],
+    "support": {
+        "issues": "https://github.com/hlashbrooke/WordPress-Plugin-Template"
+    },
+    "require": {
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^2.3"
+    }
+}
