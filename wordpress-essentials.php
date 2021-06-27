@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -15,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       WordPress Essentials
  * Plugin URI:        https://github.com/EmpiricalCodes/wordpress-essentials
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       WordPress Essentials provides you with clean user-interface to toggle common monotonous tasks that you normally do with adding code in your.
  * Version:           0.0.1-dev
  * Author:            Empirical Codes
  * Author URI:        https://github.com/EmpiricalCodes
@@ -38,15 +37,15 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'WORDPRESS_ESSENTIALS_VERSION', '1.0.0' );
 
 /*
- * requiring autoload.php file for the proper functioning of the plugin.
- * */
-if (!file_exists(plugin_dir_path( __FILE__ ) . 'vendor/autoload.php') && is_admin()) {
-    echo '<div class="notice notice-warning">
-             <p> <b>WordPress Essentials</b> plugin will not work because of missing <code>vendor/autoload.php</code> file. 
-             Run <code>composer install</code> to fix this inside <code> ' . plugin_dir_path( __FILE__ ) . '</code> directory.
-             </p></div>';
+ * Requiring autoload.php file for the proper functioning of the plugin.
+ */
+if ( ! file_exists( plugin_dir_path( __FILE__ ) . 'vendor/autoload.php' ) && is_admin() ) {
+	echo "<div class='notice notice-warning'>
+				<p> <b>WordPress Essentials</b> plugin will not work because of missing <code>vendor/autoload.php</code> file. 
+				Run <code>composer install</code> to fix this inside <code> ' . plugin_dir_path( __FILE__ ) . '</code> directory.
+				</p></div>";
 } else {
-    require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 }
 
 
@@ -88,6 +87,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-essentials.php';
  */
 function run_wordpress_essentials() {
 	$plugin = new Wordpress_Essentials();
+	$something = 'Okay';
 	$plugin->run();
 }
 run_wordpress_essentials();
