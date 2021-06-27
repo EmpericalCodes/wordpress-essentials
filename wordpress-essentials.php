@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       WordPress Essentials
  * Plugin URI:        https://github.com/EmpiricalCodes/wordpress-essentials
- * Description:       WordPress Essentials provides you with clean user-interface to toggle common monotonous tasks that you normally do with adding code in your.
+ * Description:       WordPress Essentials provides you with clean user-interface to toggle common monotonous tasks that you normally do with adding snippets.
  * Version:           0.0.1-dev
  * Author:            Empirical Codes
  * Author URI:        https://github.com/EmpiricalCodes
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WORDPRESS_ESSENTIALS_VERSION', '1.0.0' );
+define( 'WORDPRESS_ESSENTIALS_VERSION', '0.0.2' );
 
 /*
  * Requiring autoload.php file for the proper functioning of the plugin.
@@ -87,7 +87,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-essentials.php';
  */
 function run_wordpress_essentials() {
 	$plugin = new Wordpress_Essentials();
-	$something = 'Okay';
 	$plugin->run();
 }
+
 run_wordpress_essentials();
