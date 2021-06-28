@@ -4,4 +4,5 @@
     "phpcs.executablePath": "./vendor/bin/phpcs",
     "phpcs.showWarnings": true,
     "phpcs.composerJsonPath": "composer.json",
+    "emmet.includeLanguages": {"twig": "html"},
 }

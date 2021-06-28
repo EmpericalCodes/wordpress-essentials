@@ -1,0 +1,32 @@
+.we-header {
+    display: flex;
+    padding: 20px;
+}
+
+.we-header .header-left {
+    width: 50%;
+}
+
+.we-header .header-left .logo {
+    width: 150px;
+    height: auto;
+}
+
+.we-header .header-left p {
+    color: #8f8f8f;
+}
+
+
+.we-header .header-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.we-header .header-right h2{
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+}
